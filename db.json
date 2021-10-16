@@ -24,7 +24,7 @@
     },
     {
       "name": "Fibraotica",
-      "budget": "12000",
+      "budget": "10000",
       "category": {
         "id": "1",
         "name": "Infra"
