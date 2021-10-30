@@ -2,29 +2,37 @@ import { useHistory } from "react-router";
 
 import styles from "./NewProject.module.scss";
 
-import ProjectForm from "../project/ProjectForm";
+import ProjectForm from "../project/ProjectForm/ProjectForm";
+import api from "../../services/api";
+
+type ProjectProps = {
+    id: string;
+    name: string;
+    budget: number;
+    category: any;
+    cost: number;
+    handleRemove: () => void;
+    services: never[];
+};
 
 function NewProject() {
 
     const history = useHistory();
 
-    function createPost(project: { cost: number; services: never[]; }) {
-        // Inicialize o cost e services como 0
-        project.cost = 0;
-        project.services = []
+    function createPost(project: ProjectProps) {
+        const name = project.name
+        const budget = project.budget
+        const category = project.category
 
-        fetch("http://localhost:8000/projects", {
-            method: "POST",
-            headers: {
-                'Content-Type': "application/json",
-            },
-            body: JSON.stringify(project),
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
+        // Inicialize o cost e services como 0
+        const cost = project.cost = 0;
+        const services = project.services = []
+        
+        api.post("projects", { name, budget, category, cost, services })
+            .then((resp) => {
                 history.push('/projects', { message: 'Projeto criado com sucesso!' });
             })
-            .catch((err) => console.log());
+            .catch((err) => console.log(err));
     }
 
     return (

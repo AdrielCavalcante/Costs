@@ -6,7 +6,7 @@ type InputProps = {
     name: string;
     placeholder: string;
     handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    value: string | number;
+    value?: string | number;
 };
 
 function Input({type, text, name, placeholder, handleOnChange, value}: InputProps) {

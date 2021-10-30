@@ -15,14 +15,14 @@
     margin: 0 1em;
 }
 
-.social_list li:hover{
-    color: #FFBB33;
-}
-
 .social_list svg{
     color: #FFF;
     font-size: 2em;
     cursor: pointer;
+}
+
+.social_list svg:hover{
+    color: #FFBB33;
 }
 
 .copyright{

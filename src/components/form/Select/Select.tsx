@@ -9,7 +9,7 @@ type SelectProps = {
 };
 
 type OptionProps = {
-    id: number;
+    id: string;
     name: string;
 }
 
@@ -18,7 +18,7 @@ function Select({text, name, options, handleOnChange, value }: SelectProps) {
         <div className={styles.form_control}>
             <label htmlFor={name}>{text}:</label>
             <select name={name} id={name} onChange={handleOnChange} value={value || ''}>
-                <option>Selecione uma Opção</option>
+                <option value=''>Selecione uma Opção</option>
                 {options.map((option : OptionProps) => (
                     <option value={option.id} key={option.id}>{ option.name }</option>
                 ))}

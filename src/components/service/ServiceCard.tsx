@@ -1,0 +1,32 @@
+import React from 'react';
+import { BsFillTrashFill } from 'react-icons/bs';
+import styles from '../project/ProjectCard/ProjectCard.module.scss';
+
+type serviceCardProps = {
+    id: string;
+    name: string;
+    cost: number;
+    description: string;
+    handleRemove: (id:string, cost:number) => void;
+};
+
+function ServiceCard({id, name, cost, description, handleRemove}:serviceCardProps) {
+
+    const remove = (e: React.FormEvent) => {
+        e.preventDefault()
+        handleRemove(id, cost)
+    }
+
+    return (
+        <div className={styles.project_card}>
+            <h4>{name}</h4>
+            <p><span>Custo total:</span> R${ cost }</p>
+            <p>{description}</p>
+            <div className={styles.project_card_actions}>
+                <button onClick={remove}><BsFillTrashFill /> Excluir</button>
+            </div>
+        </div>
+    );
+}
+
+export default ServiceCard;

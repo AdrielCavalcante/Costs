@@ -2,47 +2,98 @@
   "projects": [
     {
       "name": "NoteSec",
-      "budget": "20000",
+      "budget": 20000,
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
-      "id": 2
+      "cost": 20000,
+      "services": [
+        {
+          "name": "Backend",
+          "cost": 5000,
+          "description": "O backend irá tratar a segurança dos dados do projeto",
+          "id": "0b78d07b-e37d-43e1-96d1-74a76e4884a9"
+        },
+        {
+          "name": "Frontend",
+          "cost": 5000,
+          "description": "Adicionar estilos bonitos e intuitivos para o projeto",
+          "id": "3c2c569a-3afb-48cb-814b-41284182c54c"
+        },
+        {
+          "name": "Banco de dados",
+          "cost": 5000,
+          "description": "O analista de Banco de dados deverá tratar o gerenciamento do backend. Seja SQL ou NoSQL",
+          "id": "ea0d095a-1f5e-4924-bec1-b971dcab4bdf"
+        },
+        {
+          "name": "Mobile",
+          "cost": 5000,
+          "description": "O desenvolvedor Mobile deverá fazer uma aplicação funcional e rápida",
+          "id": "50b2a977-ac2e-4202-94d6-8cbf58dba1eb"
+        }
+      ],
+      "id": "2"
     },
     {
       "name": "KasanjeWorks",
-      "budget": "5000",
+      "budget": 5000,
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": [],
-      "id": 3
+      "cost": 1500,
+      "services": [
+        {
+          "name": "WebDesign - NoteSec",
+          "cost": 1500,
+          "description": "O designer irá criar um protótipo do webapp com o Figma",
+          "id": "9605e3fc-cda2-4255-ba3d-c3f02ec8e84c"
+        }
+      ],
+      "id": "3"
     },
     {
       "name": "Fibraotica",
-      "budget": "10000",
+      "budget": 10000,
       "category": {
         "id": "1",
         "name": "Infra"
       },
-      "cost": 0,
-      "services": [],
-      "id": 4
+      "cost": 1000,
+      "services": [
+        {
+          "name": "Manutenção de cabos",
+          "cost": 1000,
+          "description": "a equipe deverá preparar o serviço de manutenção de Fibra",
+          "id": "2fe77f55-aea1-46f6-9532-d4967c39eb51"
+        }
+      ],
+      "id": "4"
     },
     {
+      "budget": 7000,
+      "name": "Análise",
       "category": {
         "id": "4",
         "name": "Planejamento"
       },
-      "name": "Gerenciamento de equipe",
-      "budget": "3000",
-      "cost": 0,
-      "services": [],
-      "id": 5
+      "cost": 5250,
+      "services": [
+        {
+          "name": "Software UML",
+          "cost": 750,
+          "description": "Os analistas deveram trabalhar o melhor meio de criar o projeto",
+          "id": "33d4e638-d7d0-4c9b-a023-4d66c96cf2cb"
+        },
+        {
+          "name": "Analista Senior",
+          "cost": 4500,
+          "description": "Seu trabalho será analisar a qualidade e desempenho do resto da equipe",
+          "id": "2244df62-2469-4708-a47e-75cf5bba0eb4"
+        }
+      ]
     }
   ],
   "categories": [

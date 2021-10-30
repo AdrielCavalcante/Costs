@@ -1,13 +1,14 @@
 import { useLocation } from "react-router";
 import { useState, useEffect } from "react";
 
-import Message from "../layout/Message";
-import Container from "../layout/Container";
-import Loading from "../layout/Loading";
+import Message from "../layout/Message/Message";
+import Container from "../layout/Container/Container";
+import Loading from "../layout/Loading/Loading";
 
 import styles from "./Projects.module.scss";
-import ProjectCard from "../project/ProjectCard";
-import LinkButton from "../layout/LinkButton";
+import ProjectCard from "../project/ProjectCard/ProjectCard";
+import LinkButton from "../layout/LinkButton/LinkButton";
+import api from "../../services/api";
 
 type LocationState = {
     from: Location;
@@ -15,10 +16,10 @@ type LocationState = {
 };
 
 type ProjectProps = {
-    id: number;
+    id: string;
     name: string;
     budget: number;
-    category: any;
+    category?: any;
     handleRemove: () => void;
 };
 
@@ -36,28 +37,16 @@ function Projects() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8000/projects', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((resp) => resp.json())
+        api.get('projects')
+            .then((resp) => setProjects(resp.data))
             .then((data) => {
-                setProjects(data);
                 setRemoveLoading(true);
             })
            
     }, []);
 
-    function RemoveProject(id:number) {
-        fetch(`http://localhost:8000/projects/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(resp => resp.json())
+    function RemoveProject(id: string) {
+        api.delete('projects/' + id )
             .then(() => {
                 setProjects(projects.filter((project: ProjectProps) => project.id !== id));
                 setProjectMessage('Projeto Removido com Sucesso!');

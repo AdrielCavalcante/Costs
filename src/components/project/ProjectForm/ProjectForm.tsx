@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 import styles from "./ProjectForm.module.scss";
 
-import Input from "../form/Input";
-import Select from "../form/Select";
-import SubmitButton from "../form/SubmitButton";
+import Input from "../../form/Input/Input";
+import Select from "../../form/Select/Select";
+import SubmitButton from "../../form/SubmitButton/SubmitButton";
+import api from "../../../services/api";
 
 type ProjectFormProps = {
     btnText: string;
@@ -15,19 +16,11 @@ type ProjectFormProps = {
 function ProjectForm({ handleSubmit, btnText, projectData }: ProjectFormProps) {
 
     const [categories, setCategories] = useState([]);
-    const [project, setProject] = useState(projectData || {});
+    const [project, setProject] = useState(projectData);
 
     useEffect(() => {
-        fetch("http://localhost:8000/categories", {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-                setCategories(data)
-            })
+        api.get("categories")
+            .then((resp) => setCategories(resp.data))
             .catch((err) => console.log(err))
     }, [])
 
@@ -37,10 +30,15 @@ function ProjectForm({ handleSubmit, btnText, projectData }: ProjectFormProps) {
     }
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
-        setProject({ ...project, [e.target.name]: e.target.value });
+        if (e.target.name === "budget") {
+            setProject({ ...project, [e.target.name]: parseFloat(e.target.value) });
+        } else {
+            setProject({ ...project, [e.target.name]: e.target.value });
+        }
     }
 
     function handleCategory(e: React.FormEvent<HTMLSelectElement>) {
+        console.log(e)
         setProject({
             ...project, category: {
                 id: e.currentTarget.value,
