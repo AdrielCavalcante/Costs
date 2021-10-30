@@ -28,10 +28,13 @@ function NewProject() {
         // Inicialize o cost e services como 0
         const cost = project.cost = 0;
         const services = project.services = []
-        
-        api.post("projects", { name, budget, category, cost, services })
+
+        api.post("projects", { name, budget, category, cost, services }, { headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }})
             .then((resp) => {
-                history.push('projects', { message: 'Projeto criado com sucesso!' });
+                history.push('projects/', { message: 'Projeto criado com sucesso!' });
             })
             .catch((err) => console.log(err));
     }

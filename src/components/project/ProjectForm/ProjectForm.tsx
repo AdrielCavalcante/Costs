@@ -38,7 +38,6 @@ function ProjectForm({ handleSubmit, btnText, projectData }: ProjectFormProps) {
     }
 
     function handleCategory(e: React.FormEvent<HTMLSelectElement>) {
-        console.log(e)
         setProject({
             ...project, category: {
                 id: e.currentTarget.value,

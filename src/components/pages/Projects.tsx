@@ -46,7 +46,6 @@ function Projects() {
     }, []);
 
     function RemoveProject(id: any) {
-        console.log(id)
         api.delete('projects/'+ id )
             .then(() => {
                 setProjects(projects.filter((project: ProjectProps) => project.id !== id));
