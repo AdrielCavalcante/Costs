@@ -8,6 +8,8 @@
 
 - You must have installed: ![Node.js](https://img.shields.io/badge/-Node.js-%23303030?style=flat-square&logo=Node.js&logoColor=3C873A) and ![Yarn](https://img.shields.io/badge/-Yarn-%23DCDCDC?style=flat-square&logo=yarn&logoColor=117cad) to run the project.
 
+##### Typicode is not doing POST, so I recommend cloning and testing locally.
+
 ```bash
 # To install dependencies
 $ yarn
@@ -20,3 +22,5 @@ $ yarn start
 ```
 
 The application will be available in your browser, through the URL: `http://localhost:3000`
+
+The UI of the web application was made by the channel: [Hora de Codar](https://youtu.be/OinwLJg8k88)
