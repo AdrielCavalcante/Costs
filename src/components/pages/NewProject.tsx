@@ -20,6 +20,7 @@ function NewProject() {
     const history = useHistory();
 
     function createPost(project: ProjectProps) {
+        
         const name = project.name
         const budget = project.budget
         const category = project.category
@@ -30,10 +31,11 @@ function NewProject() {
         
         api.post("projects", { name, budget, category, cost, services })
             .then((resp) => {
-                history.push('/projects', { message: 'Projeto criado com sucesso!' });
+                history.push('projects', { message: 'Projeto criado com sucesso!' });
             })
             .catch((err) => console.log(err));
     }
+    
 
     return (
         <div className={styles.newProject_container}>

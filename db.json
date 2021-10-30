@@ -1,6 +1,6 @@
 {
   "projects": [
-    {
+{
       "name": "NoteSec",
       "budget": 20000,
       "category": {
@@ -34,43 +34,7 @@
           "id": "50b2a977-ac2e-4202-94d6-8cbf58dba1eb"
         }
       ],
-      "id": "2"
-    },
-    {
-      "name": "KasanjeWorks",
-      "budget": 5000,
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 1500,
-      "services": [
-        {
-          "name": "WebDesign - NoteSec",
-          "cost": 1500,
-          "description": "O designer irá criar um protótipo do webapp com o Figma",
-          "id": "9605e3fc-cda2-4255-ba3d-c3f02ec8e84c"
-        }
-      ],
-      "id": "3"
-    },
-    {
-      "name": "Fibraotica",
-      "budget": 10000,
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 1000,
-      "services": [
-        {
-          "name": "Manutenção de cabos",
-          "cost": 1000,
-          "description": "a equipe deverá preparar o serviço de manutenção de Fibra",
-          "id": "2fe77f55-aea1-46f6-9532-d4967c39eb51"
-        }
-      ],
-      "id": "4"
+      "id": "XYZ"
     }
   ],
   "categories": [

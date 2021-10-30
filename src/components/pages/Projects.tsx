@@ -9,7 +9,6 @@ import styles from "./Projects.module.scss";
 import ProjectCard from "../project/ProjectCard/ProjectCard";
 import LinkButton from "../layout/LinkButton/LinkButton";
 import api from "../../services/api";
-import { AxiosRequestConfig } from "axios";
 
 type LocationState = {
     from: Location;

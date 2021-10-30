@@ -14,9 +14,9 @@ type ProjectFormProps = {
 };
 
 function ProjectForm({ handleSubmit, btnText, projectData }: ProjectFormProps) {
-
+    
     const [categories, setCategories] = useState([]);
-    const [project, setProject] = useState(projectData);
+    const [project, setProject] = useState(projectData || {});
 
     useEffect(() => {
         api.get("categories")
