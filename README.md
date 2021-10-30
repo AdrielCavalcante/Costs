@@ -15,6 +15,7 @@
 $ yarn
 
 # Run fake API server // http://localhost:8000
+# Modify src->services->api. Just leave the Localhost link
 $ yarn server
 
 # Run Project
