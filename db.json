@@ -71,29 +71,6 @@
         }
       ],
       "id": "4"
-    },
-    {
-      "budget": 7000,
-      "name": "Análise",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 5250,
-      "services": [
-        {
-          "name": "Software UML",
-          "cost": 750,
-          "description": "Os analistas deveram trabalhar o melhor meio de criar o projeto",
-          "id": "33d4e638-d7d0-4c9b-a023-4d66c96cf2cb"
-        },
-        {
-          "name": "Analista Senior",
-          "cost": 4500,
-          "description": "Seu trabalho será analisar a qualidade e desempenho do resto da equipe",
-          "id": "2244df62-2469-4708-a47e-75cf5bba0eb4"
-        }
-      ]
     }
   ],
   "categories": [

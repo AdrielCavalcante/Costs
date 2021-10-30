@@ -9,6 +9,7 @@ import styles from "./Projects.module.scss";
 import ProjectCard from "../project/ProjectCard/ProjectCard";
 import LinkButton from "../layout/LinkButton/LinkButton";
 import api from "../../services/api";
+import { AxiosRequestConfig } from "axios";
 
 type LocationState = {
     from: Location;
@@ -45,8 +46,9 @@ function Projects() {
            
     }, []);
 
-    function RemoveProject(id: string) {
-        api.delete('projects/' + id )
+    function RemoveProject(id: any) {
+        console.log(id)
+        api.delete('projects/'+ id )
             .then(() => {
                 setProjects(projects.filter((project: ProjectProps) => project.id !== id));
                 setProjectMessage('Projeto Removido com Sucesso!');
