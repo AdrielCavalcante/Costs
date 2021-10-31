@@ -20,19 +20,11 @@ function NewProject() {
     const history = useHistory();
 
     function createPost(project: ProjectProps) {
-        
-        const name = project.name
-        const budget = project.budget
-        const category = project.category
 
-        // Inicialize o cost e services como 0
-        const cost = project.cost = 0;
-        const services = project.services = []
-
-        api.post("projects", { name, budget, category, cost, services }, { headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }})
+        api.post("projects", { project }, { headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },})
             .then((resp) => {
                 history.push('projects/', { message: 'Projeto criado com sucesso!' });
             })
